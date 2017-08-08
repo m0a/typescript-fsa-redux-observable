@@ -1,4 +1,4 @@
-# [TypeScript FSA](https://github.com/aikoven/typescript-fsa) utilities for redux-observable [![npm version][npm-image]][npm-url] 
+# [TypeScript FSA](https://github.com/aikoven/typescript-fsa) utilities for redux-observable [![npm version](https://badge.fury.io/js/typescript-fsa-redux-observable.svg)](https://badge.fury.io/js/typescript-fsa-redux-observable)
  
 ## Installation
 
