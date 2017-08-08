@@ -1,4 +1,4 @@
-# [TypeScript FSA](https://github.com/aikoven/typescript-fsa) utilities for redux-observable
+# [TypeScript FSA](https://github.com/aikoven/typescript-fsa) utilities for redux-observable [![npm version][npm-image]][npm-url] 
  
 ## Installation
 
