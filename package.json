@@ -1,6 +1,6 @@
 {
   "name": "typescript-fsa-redux-observable",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "TypeScript FSA utilities for redux-observable",
   "main": "dist/index.js",
   "typings": "lib/index.ts",
@@ -38,7 +38,7 @@
   "dependencies": {
     "@types/redux": "^3.6.0",
     "redux": "^3.7.2",
-    "redux-observable": "^0.14.1",
+    "redux-observable": "^0.15.0",
     "rxjs": "^5.4.2",
     "typescript-fsa-reducers": "^0.4.4"
   },
