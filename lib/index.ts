@@ -1,12 +1,12 @@
 import { ActionsObservable } from 'redux-observable';
 import { Observable } from 'rxjs';
 import { Action, ActionCreator, isType } from 'typescript-fsa';
-import { MiddlewareAPI, Middleware } from 'redux';
+import * as Redux from 'redux';
 import 'rxjs/add/operator/filter';
 
 declare module 'redux-observable' {
 
-    interface ActionsObservable<T> {
+    interface ActionsObservable<T extends Redux.Action> {
         ofAction<T, P>(action: ActionCreator<P>): ActionsObservable<Action<P>>;
     }
 }

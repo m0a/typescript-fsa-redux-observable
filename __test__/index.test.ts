@@ -4,7 +4,7 @@ import actionCreatorFactory from 'typescript-fsa';
 
 // for reducers
 import { reducerWithInitialState } from 'typescript-fsa-reducers';
-import { combineReducers } from 'redux';
+import { combineReducers, Action } from 'redux';
 
 //for epics
 import 'rxjs';
@@ -38,7 +38,7 @@ const rootReducer = combineReducers({
 
 
 // epics
-const counterIncrementEpic: Epic<{}, State> =
+const counterIncrementEpic: Epic<Action, State> =
     (action$, store) => action$.ofAction(actions.increment.started)
         .delay(300)
         .map(action => actions.increment.done({
@@ -46,7 +46,7 @@ const counterIncrementEpic: Epic<{}, State> =
             result: undefined
         }));
 
-const counterDecrementEpic: Epic<{}, State> =
+const counterDecrementEpic: Epic<Action, State> =
     (action$, store) => action$.ofAction(actions.decrement.started)
         .delay(300)
         .map(action => actions.decrement.done({
@@ -61,23 +61,23 @@ const epics = combineEpics(
 
 const epicMiddleware = createEpicMiddleware(epics);
 
-const store = createStore(rootReducer,applyMiddleware(epicMiddleware))
+const store = createStore(rootReducer, applyMiddleware(epicMiddleware))
 
 // tool
 async function sleep(time: number) {
     return new Promise<void>(resolve => {
-        setTimeout(() => (resolve()),time)
+        setTimeout(() => (resolve()), time)
     })
 }
 
 it("incremnet decrement test", async () => {
-    expect(store.getState()).toEqual({counter:0})
+    expect(store.getState()).toEqual({ counter: 0 })
     store.dispatch(actions.increment.started(undefined))
-    expect(store.getState()).toEqual({counter:0})
+    expect(store.getState()).toEqual({ counter: 0 })
     await sleep(300)
-    expect(store.getState()).toEqual({counter:1})
+    expect(store.getState()).toEqual({ counter: 1 })
     store.dispatch(actions.decrement.started(undefined))
-    expect(store.getState()).toEqual({counter:1})
+    expect(store.getState()).toEqual({ counter: 1 })
     await sleep(300)
-    expect(store.getState()).toEqual({counter:0})
+    expect(store.getState()).toEqual({ counter: 0 })
 })
