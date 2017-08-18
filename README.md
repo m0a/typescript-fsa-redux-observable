@@ -13,7 +13,7 @@ only one!
 
 ### ofAction(action: ActionCreator)
 
-** Example: **
+**Example:**
 
 ```ts
 
@@ -57,7 +57,7 @@ const rootReducer = combineReducers({
 
 
 // epics
-const counterIncrementEpic: Epic<{}, State> =
+const counterIncrementEpic: Epic<Action, State> =
     (action$, store) => action$.ofAction(actions.increment.started)
         .delay(300)
         .map(action => actions.increment.done({
@@ -65,7 +65,7 @@ const counterIncrementEpic: Epic<{}, State> =
             result: undefined
         }));
 
-const counterDecrementEpic: Epic<{}, State> =
+const counterDecrementEpic: Epic<Action, State> =
     (action$, store) => action$.ofAction(actions.decrement.started)
         .delay(300)
         .map(action => actions.decrement.done({
