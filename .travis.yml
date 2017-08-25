@@ -2,7 +2,5 @@ language: node_js
 node_js:
   - "7"
   - "8"
-before_install:
-- npm install -g typescript
 script:
 - npm test
