@@ -1,6 +1,6 @@
 {
   "name": "typescript-fsa-redux-observable",
-  "version": "0.1.3",
+  "version": "0.16.0",
   "description": "TypeScript FSA utilities for redux-observable",
   "main": "dist/index.js",
   "typings": "lib/index.ts",
