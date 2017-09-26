@@ -11,6 +11,6 @@ declare module 'redux-observable' {
 }
 
 ActionsObservable.prototype.ofAction =
-    function <P>(actionCreater: ActionCreator<P>): ActionsObservable<Action<P>> {
+    function <P>(this: ActionsObservable<Action<P>>, actionCreater: ActionCreator<P>): ActionsObservable<Action<P>> {
         return this.filter(action => (isType(action, actionCreater))) as ActionsObservable<Action<P>>;
     };

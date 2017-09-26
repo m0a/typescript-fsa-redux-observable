@@ -1,6 +1,6 @@
 {
   "name": "typescript-fsa-redux-observable",
-  "version": "0.16.1",
+  "version": "0.16.2",
   "description": "TypeScript FSA utilities for redux-observable",
   "main": "dist/index.js",
   "typings": "lib/index.ts",
@@ -46,6 +46,6 @@
     "@types/jest": "^20.0.7",
     "jest": "^20.0.4",
     "ts-jest": "^20.0.10",
-    "typescript": "^2.2.4"
+    "typescript": "^2.5.2"
   }
 }

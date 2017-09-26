@@ -12,8 +12,6 @@ yarn add typescript-fsa-redux-observable
 
 ## API
 
-only one!
-
 ### ofAction(action: ActionCreator)
 
 **Example:**
