@@ -2,8 +2,8 @@
   "name": "typescript-fsa-redux-observable",
   "version": "0.18.0",
   "description": "TypeScript FSA utilities for redux-observable",
-  "main": "dist/index.js",
-  "typings": "lib/index.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "clean": "rimraf lib dist",
     "build": "npm run clean && tsc",
