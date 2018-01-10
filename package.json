@@ -1,6 +1,6 @@
 {
   "name": "typescript-fsa-redux-observable",
-  "version": "0.17.1",
+  "version": "0.18.0",
   "description": "TypeScript FSA utilities for redux-observable",
   "main": "dist/index.js",
   "typings": "lib/index.ts",
@@ -38,15 +38,15 @@
   "license": "MIT",
   "dependencies": {
     "redux": "^3.7.2",
-    "redux-observable": "0.17.0",
-    "rxjs": "^5.4.2",
-    "typescript-fsa-reducers": "^0.4.4"
+    "redux-observable": "^0.17.0",
+    "rxjs": "^5.5.6",
+    "typescript-fsa-reducers": "^0.4.5"
   },
   "devDependencies": {
-    "@types/jest": "21.1.6",
-    "jest": "21.2.1",
+    "@types/jest": "^22.0.1",
+    "jest": "^22.0.5",
     "rimraf": "^2.6.2",
-    "ts-jest": "21.2.2",
-    "typescript": "^2.5.2"
+    "ts-jest": "^22.0.1",
+    "typescript": "^2.6.2"
   }
 }
