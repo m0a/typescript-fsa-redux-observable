@@ -8,7 +8,7 @@ import { combineReducers, Action } from 'redux';
 
 //for epics
 import 'rxjs';
-import '../lib';
+import '../src';
 import { combineEpics, Epic, createEpicMiddleware } from 'redux-observable';
 
 //reducer
@@ -70,7 +70,7 @@ async function sleep(time: number) {
     })
 }
 
-it("incremnet decrement test", async () => {
+it("increment decrement test", async () => {
     expect(store.getState()).toEqual({ counter: 0 })
     store.dispatch(actions.increment.started(undefined))
     expect(store.getState()).toEqual({ counter: 0 })
