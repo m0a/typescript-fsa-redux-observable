@@ -1,18 +1,20 @@
 {
   "name": "typescript-fsa-redux-observable",
-  "version": "0.17.0",
+  "version": "0.18.0",
   "description": "TypeScript FSA utilities for redux-observable",
-  "main": "dist/index.js",
-  "typings": "lib/index.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "build": "tsc",
-    "test": "jest"
+    "clean": "rimraf lib dist",
+    "build": "npm run clean && tsc",
+    "test": "jest",
+    "prepublishOnly ": "npm run build"
   },
   "jest": {
     "transform": {
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "testRegex": "(/tests/.*|\\.(test|spec))\\.(ts|tsx|js)$",
     "moduleFileExtensions": [
       "ts",
       "tsx",
@@ -21,9 +23,8 @@
     ]
   },
   "files": [
-    "lib/index.ts",
-    "dist/index.js",
-    "dist/index.d.ts"
+    "dist",
+    "lib"
   ],
   "repository": {
     "type": "git",
@@ -36,16 +37,16 @@
   "author": "m0a",
   "license": "MIT",
   "dependencies": {
-    "@types/redux": "^3.6.0",
     "redux": "^3.7.2",
-    "redux-observable": "0.17.0",
-    "rxjs": "^5.4.2",
-    "typescript-fsa-reducers": "^0.4.4"
+    "redux-observable": "^0.17.0",
+    "rxjs": "^5.5.6",
+    "typescript-fsa-reducers": "^0.4.5"
   },
   "devDependencies": {
-    "@types/jest": "21.1.6",
-    "jest": "21.2.1",
-    "ts-jest": "21.2.2",
-    "typescript": "^2.5.2"
+    "@types/jest": "^22.0.1",
+    "jest": "^22.0.5",
+    "rimraf": "^2.6.2",
+    "ts-jest": "^22.0.1",
+    "typescript": "^2.6.2"
   }
 }
