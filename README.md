@@ -28,7 +28,7 @@ import { combineReducers } from 'redux';
 
 //for epics
 import { delay, map, tap, ignoreElements } from 'rxjs/operators';
-import { ofAction } from 'typescript-fsa-redux-observable'; // <-- here
+import { ofAction, ofActionPayload } from 'typescript-fsa-redux-observable'; // <-- here
 import { combineEpics, Epic, createEpicMiddleware } from 'redux-observable';
 
 //reducer
@@ -59,10 +59,10 @@ const rootReducer = combineReducers({
 const counterIncrementEpic: Epic<AnyAction, Action<Success<undefined, undefined>>, State> =
     action$ =>
         action$.pipe(
-            ofAction(actions.increment.started),
+            ofActionPayload(actions.increment.started),
             delay(300),
-            map(action => actions.increment.done({
-                params: action.payload,
+            map(payload => actions.increment.done({
+                params: payload,
                 result: undefined
             }))
         );
@@ -70,10 +70,10 @@ const counterIncrementEpic: Epic<AnyAction, Action<Success<undefined, undefined>
 const counterDecrementEpic: Epic<AnyAction, Action<Success<undefined, undefined>>, State> =
     action$ =>
         action$.pipe(
-            ofAction(actions.decrement.started),
+            ofActionPayload(actions.decrement.started),
             delay(300),
-            map(action => actions.decrement.done({
-                params: action.payload,
+            map(payload => actions.decrement.done({
+                params: payload,
                 result: undefined
             }))
         );
